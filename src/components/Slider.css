@@ -1,0 +1,51 @@
+.slider{
+  position:relative;
+  width:100%;
+  height:360px;
+  overflow:hidden;
+  border-radius:12px;
+}
+
+.slider-image{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+  filter:brightness(0.72);
+  transition:opacity .6s ease;
+}
+
+.slider-overlay{
+  position:absolute;
+  bottom:22px;
+  left:22px;
+  right:22px;
+  display:flex;
+  justify-content:center;
+  pointer-events:none;
+}
+
+.slider-message{
+  pointer-events:auto;
+  background: #f5821f;
+  color: #ffffff;
+  padding:12px 18px;
+  border-radius:10px;
+  font-weight:700;
+  max-width:980px;
+  text-align:center;
+  box-shadow:0 12px 30px rgba(144,238,144,0.08);
+  animation: messageFade 3.4s ease-in-out infinite;
+}
+
+@keyframes messageFade{
+  0% { opacity:0; transform: translateY(8px); }
+  10% { opacity:1; transform: translateY(0); }
+  85% { opacity:1; transform: translateY(0); }
+  100% { opacity:0; transform: translateY(-6px); }
+}
+
+@media (max-width:880px){
+  .slider{ height:260px }
+  .slider-message{ font-size:0.95rem; padding:10px }
+}

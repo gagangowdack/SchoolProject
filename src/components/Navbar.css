@@ -1,0 +1,227 @@
+/* ================= NAVBAR MAIN ================= */
+.navbar {
+  width: 100%;
+  background: #f5821f;
+  padding: 12px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.25);
+}
+
+/* ================= LOGO AREA ================= */
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.nav-logo {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #fff;
+}
+
+.nav-title h2 {
+  font-size: 18px;
+  margin: 0;
+  color: #fff;
+  font-weight: bold;
+}
+
+.nav-title p {
+  margin: 0;
+  font-size: 13px;
+  color: #fff;
+  opacity: .9;
+}
+
+/* ================= NAV LINKS DESKTOP ================= */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 28px;
+  align-items: center;
+}
+
+.nav-links li a,
+.dropdown-btn {
+  font-size: 17px;
+  font-weight: 600;
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+}
+
+/* ================= DROPDOWN DESKTOP ================= */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 40px;
+  background: #fff;
+  width: 170px;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,.25);
+}
+
+.dropdown-menu li {
+  padding: 10px 15px;
+}
+
+.dropdown-menu li a {
+  color: #333;
+  display: block;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+/* ================= DROPDOWN DESKTOP ================= */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-btn {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 17px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* SAME BLUE BACKGROUND */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 40px;
+  background: #0d47a1; /* your blue color */
+  width: 180px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,.25);
+}
+
+.dropdown-menu li {
+  padding: 12px 18px;
+}
+
+.dropdown-menu li a {
+  color: white;            /* WHITE TEXT */
+  display: block;
+  font-weight: 500;
+}
+
+/* Show on hover (desktop) */
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+
+/* ================= HAMBURGER ================= */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 28px;
+  height: 3px;
+  background: white;
+  transition: .3s;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* ================= MOBILE MENU ================= */
+@media (max-width: 768px) {
+
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 85px;
+    left: 0;
+    width: 100%;
+    background: #f5821f;
+    flex-direction: column;
+    padding: 25px 0;
+    gap: 15px;
+
+    /* HIDDEN BY DEFAULT */
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: 0.45s ease-in-out;
+  }
+
+  /* SHOW ON TOGGLE */
+  .nav-links.active {
+    max-height: 500px;
+    opacity: 1;
+  }
+
+  /* MOBILE DROPDOWN */
+  .dropdown-menu {
+    position: relative;
+    box-shadow: none;
+    width: 100%;
+    background: rgba(255,255,255,0.95);
+    margin-top: 10px;
+    display: none;
+  }
+
+  .dropdown-btn {
+    width: 100%;
+    text-align: left;
+  }
+
+  /* Show dropdown when clicked */
+  .dropdown:hover .dropdown-menu {
+    display: block;
+  }
+}
+@media (max-width: 768px) {
+
+  .dropdown-menu {
+    position: relative;
+    background: #0d47a1;  /* SAME BLUE */
+    width: 100%;
+    margin-top: 10px;
+    display: none;
+    border-radius: 6px;
+  }
+
+  .dropdown-menu li a {
+    color: white;
+  }
+
+  /* Open dropdown when tapped */
+  .dropdown:hover .dropdown-menu {
+    display: block;
+  }
+}
