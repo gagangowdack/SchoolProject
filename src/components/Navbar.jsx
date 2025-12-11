@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import "./Navbar.css";
 import logo from "../assets/logo.jpg";
 
@@ -9,7 +9,7 @@ const Navbar = () => {
   return (
     <nav className="navbar">
 
-      {/* Logo Area */}
+      {/* Logo Section */}
       <div className="nav-left">
         <img src={logo} className="nav-logo" alt="School Logo" />
         <div className="nav-title">
@@ -18,7 +18,7 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Hamburger Icon */}
+      {/* Hamburger */}
       <div
         className={`hamburger ${open ? "active" : ""}`}
         onClick={() => setOpen(!open)}
@@ -28,22 +28,58 @@ const Navbar = () => {
         <span></span>
       </div>
 
-      {/* Navigation Links */}
+      {/* Menu */}
       <ul className={`nav-links ${open ? "active" : ""}`}>
-        <li><Link to="/" onClick={() => setOpen(false)}>Home</Link></li>
-        <li><Link to="/about" onClick={() => setOpen(false)}>About Us</Link></li>
 
+        <li>
+          <NavLink to="/" onClick={() => setOpen(false)}>
+            Home
+          </NavLink>
+        </li>
+
+        <li>
+          <NavLink to="/about" onClick={() => setOpen(false)}>
+            About Us
+          </NavLink>
+        </li>
+
+        {/* DROPDOWN */}
         <li className="dropdown">
           <button className="dropdown-btn">Education ▾</button>
+
           <ul className="dropdown-menu">
-            <li><Link to="/prekg" onClick={() => setOpen(false)}>Pre-KG</Link></li>
-            <li><Link to="/primary" onClick={() => setOpen(false)}>Primary</Link></li>
-            <li><Link to="/highschool" onClick={() => setOpen(false)}>High School</Link></li>
+            <li>
+              <NavLink to="/prekg" onClick={() => setOpen(false)}>
+                Pre-KG
+              </NavLink>
+            </li>
+
+            <li>
+              <NavLink to="/primary" onClick={() => setOpen(false)}>
+                Primary
+              </NavLink>
+            </li>
+
+            <li>
+              <NavLink to="/highschool" onClick={() => setOpen(false)}>
+                High School
+              </NavLink>
+            </li>
           </ul>
         </li>
 
-        <li><Link to="/gallery" onClick={() => setOpen(false)}>Gallery</Link></li>
-        <li><Link to="/contact" onClick={() => setOpen(false)}>Contact</Link></li>
+        <li>
+          <NavLink to="/gallery" onClick={() => setOpen(false)}>
+            Gallery
+          </NavLink>
+        </li>
+
+        <li>
+          <NavLink to="/contact" onClick={() => setOpen(false)}>
+            Contact
+          </NavLink>
+        </li>
+
       </ul>
     </nav>
   );

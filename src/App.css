@@ -151,9 +151,6 @@ body{
 .muted { color: rgba(255,255,255,0.65); }
 
 /* Make all text white site-wide, but preserve navigation bar styling */
-body, body * {
-  color: #000000 !important;
-}
 
 /* Restore navbar-specific colors so navigation stays styled */
 .navbar, .navbar * {
@@ -248,7 +245,138 @@ body, body * {
   .home-container { padding: 0 12px; }
 }
 
+/* FOOTER MAIN */
+.school-footer {
+  background: #0a3d62;
+  color: rgb(253, 252, 252);
+  padding-top: 0;
+  animation: fadeInFooter 0.8s ease-in-out;
+}
 
+/* TOP ANNOUNCEMENT BAR */
+.footer-top-bar {
+  background: #074168;
+  text-align: center;
+  padding: 10px 0;
+  font-weight: 600;
+  border-bottom: 1px solid #ffffff40;
+  animation: slideDown 0.6s ease;
+}
+
+/* FOOTER CONTENT GRID */
+.footer-container {
+  padding: 50px 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 40px;
+}
+
+/* SECTION TITLES */
+.footer-section h3,
+.footer-section h4 {
+  margin-bottom: 12px;
+  padding-bottom: 6px;
+  border-bottom: 2px solid #ffffff40;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+/* TEXT */
+.footer-section p,
+.footer-section li,
+.footer-bottom {
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* LINKS */
+.footer-section a {
+  color: #d4f1ff;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.footer-section a:hover {
+  color: #fff;
+}
+
+/* SOCIAL ICONS */
+.footer-social {
+  margin-top: 15px;
+  display: flex;
+  gap: 12px;
+}
+
+.footer-social a {
+  width: 35px;
+  height: 35px;
+  background: #ffffff30;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  font-size: 1.1rem;
+  transition: 0.3s;
+}
+
+.footer-social a:hover {
+  background: #ffffff60;
+  transform: scale(1.1);
+}
+
+/* NEWSLETTER BOX */
+.newsletter input {
+  width: 70%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+}
+
+.newsletter button {
+  padding: 10px 15px;
+  border: none;
+  background: #1dd1a1;
+  color: black;
+  font-weight: bold;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.newsletter button:hover {
+  background: #10ac84;
+}
+
+/* COPYRIGHT */
+.footer-bottom {
+  text-align: center;
+  padding: 15px 10px;
+  border-top: 1px solid #ffffff30;
+  font-size: 0.9rem;
+}
+
+/* ANIMATIONS */
+@keyframes fadeInFooter {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideDown {
+  from { transform: translateY(-20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+body, body * {
+  color: #000000 !important;
+}
+
+.school-footer,
+.school-footer *,
+.site-footer,
+.site-footer * {
+  color: #ffffff !important;
+}
 
 
 

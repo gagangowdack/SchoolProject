@@ -6,6 +6,7 @@ import About from "./pages/About";
 import Education from "./pages/Education";
 import Gallery from "./pages/Gallery";
 import Contact from "./pages/Contact";
+import ScrollToHash from "./pages/ScrollToHash";
 
 function App() {
   return (

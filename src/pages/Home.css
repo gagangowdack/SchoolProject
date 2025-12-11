@@ -72,6 +72,7 @@
 .text-block li {
   margin-bottom: 8px;
   color: rgba(255,255,255,0.95);
+  text-align: left;
 }
 
 /* image-block */
@@ -218,4 +219,157 @@
   .premium-title {
     font-size: 1.6rem;
   }
+}
+btn {
+  background-color: aqua;
+  color: #2b2c6f
+}
+/* ===========================
+   GLOBAL PREMIUM BUTTON STYLE
+   =========================== */
+
+.btn {
+  display: inline-block;
+  padding: 10px 22px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+/* PRIMARY BUTTON (filled) */
+.btn.primary {
+  background-color: #2b2c6f;
+  color: #ffd85a;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+}
+
+.btn.primary:hover {
+  background-color: #ffd85a;
+  color: #2b2c6f;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 26px rgba(0,0,0,0.45);
+}
+
+/* OUTLINE BUTTON (used in events) */
+.btn.outline {
+  border: 2px solid #2b2c6f;
+  color: #2b2c6f;
+  background: transparent;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+}
+
+.btn.outline:hover {
+  background-color: #2b2c6f;
+  color: #ffd85a;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 26px rgba(0,0,0,0.45);
+}
+
+/* =============================
+   🔔 ALERT BAR (School Notice)
+   ============================= */
+
+/* container: keep it above slider (z-index) and full width */
+.alert-bar {
+  width: 100%;
+  background: #f5821f;
+  padding: 10px 0;
+  margin: 0 0 20px 0;
+  border-bottom: 3px solid #ffd85a;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.35);
+  position: relative;
+  z-index: 9999;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+/* If you use <marquee> (legacy), style it */
+.alert-bar marquee {
+  width: 100%;
+  color: #ffd85a;
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.45);
+  white-space: nowrap;
+  line-height: 1;
+}
+
+/* Modern CSS-only fallback (in case <marquee> is removed or you switch to <div class="alert-text">) */
+.alert-text {
+  display: inline-block;
+  color: #ffd85a;
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.45);
+  white-space: nowrap;
+  padding-left: 100%; /* start off-screen to the right */
+  animation: alert-scroll 15s linear infinite;
+}
+
+/* Make animation slightly faster on small screens */
+@media (max-width: 600px) {
+  .alert-bar marquee { font-size: 0.95rem; }
+  .alert-text { font-size: 0.95rem; animation-duration: 12s; }
+}
+
+/* animation that moves text left continuously */
+@keyframes alert-scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+
+/* small accessible close button (optional) — visible on large screens */
+.alert-close {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 16px;
+  margin-left: auto;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.08);
+  color: #fff;
+  width: 34px;
+  height: 34px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 700;
+  transition: 0.18s ease;
+}
+.alert-close:hover {
+  transform: translateY(-2px);
+  background: rgba(255,255,255,0.12);
+}
+
+/* If you want the alert bar slimmer on very small devices */
+@media (max-width: 360px) {
+  .alert-bar { padding: 8px 6px; }
+  .alert-bar marquee, .alert-text { font-size: 0.9rem; }
+}
+.alert-bar a {
+  color: inherit;   /* keep the same color */
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+.alert-bar a:hover {
+  opacity: 0.7;
+}
+/* VIDEOS SECTION */
+.videos-section {
+  margin-top: 60px;
+  text-align: center;
+}
+
+.video-container {
+  max-width: 900px;
+  margin: 20px auto;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
 }

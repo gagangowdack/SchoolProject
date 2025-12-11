@@ -41,7 +41,7 @@
   opacity: .9;
 }
 
-/* ================= NAV LINKS DESKTOP ================= */
+/* ================= NAV LINKS ================= */
 .nav-links {
   list-style: none;
   display: flex;
@@ -56,37 +56,28 @@
   text-decoration: none;
   color: white;
   cursor: pointer;
-}
-
-/* ================= DROPDOWN DESKTOP ================= */
-.dropdown {
-  position: relative;
-}
-
-.dropdown-menu {
-  display: none;
-  position: absolute;
-  top: 40px;
-  background: #fff;
-  width: 170px;
+  padding: 8px 14px;
   border-radius: 6px;
-  overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0,0,0,.25);
+  transition: 0.3s ease-in-out;
 }
 
-.dropdown-menu li {
-  padding: 10px 15px;
+/* HOVER EFFECT */
+.nav-links li a:hover,
+.dropdown-btn:hover {
+  background: #0d47a1;
+  color: white;
+  transform: translateY(-2px);
 }
 
-.dropdown-menu li a {
-  color: #333;
-  display: block;
+/* ACTIVE PAGE STYLE (STAYS BLUE) */
+.nav-links li a.active {
+  background: #0d47a1 !important;
+  color: black !important;   /* YOU REQUESTED THIS */
+  box-shadow: 0 3px 8px rgba(0,0,0,0.35);
+  transform: none;
 }
 
-.dropdown:hover .dropdown-menu {
-  display: block;
-}
-/* ================= DROPDOWN DESKTOP ================= */
+/* ================= DROPDOWN ================= */
 .dropdown {
   position: relative;
 }
@@ -94,22 +85,24 @@
 .dropdown-btn {
   background: transparent;
   border: none;
-  color: white;
-  font-size: 17px;
-  font-weight: 600;
-  cursor: pointer;
 }
 
-/* SAME BLUE BACKGROUND */
+/* Dropdown Menu */
 .dropdown-menu {
   display: none;
   position: absolute;
   top: 40px;
-  background: #0d47a1; /* your blue color */
+  background: #f5821f;
   width: 180px;
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 4px 12px rgba(0,0,0,.25);
+  animation: dropdownFade 0.25s ease;
+}
+
+@keyframes dropdownFade {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .dropdown-menu li {
@@ -117,51 +110,46 @@
 }
 
 .dropdown-menu li a {
-  color: white;            /* WHITE TEXT */
+  color: white;
   display: block;
   font-weight: 500;
 }
 
-/* Show on hover (desktop) */
+/* Open dropdown on hover */
 .dropdown:hover .dropdown-menu {
   display: block;
 }
 
-
-/* ================= HAMBURGER ================= */
-.hamburger {
-  display: none;
-  flex-direction: column;
-  gap: 5px;
-  cursor: pointer;
-}
-
-.hamburger span {
-  width: 28px;
-  height: 3px;
-  background: white;
-  transition: .3s;
-}
-
-.hamburger.active span:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
-}
-
-.hamburger.active span:nth-child(2) {
-  opacity: 0;
-}
-
-.hamburger.active span:nth-child(3) {
-  transform: rotate(-45deg) translate(6px, -6px);
-}
-
-/* ================= MOBILE MENU ================= */
+/* ================= MOBILE VIEW ================= */
 @media (max-width: 768px) {
 
   .hamburger {
     display: flex;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
   }
 
+  .hamburger span {
+    width: 28px;
+    height: 3px;
+    background: white;
+    transition: .3s;
+  }
+
+  .hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+
+  .hamburger.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+  }
+
+  /* Mobile Menu */
   .nav-links {
     position: absolute;
     top: 85px;
@@ -172,56 +160,34 @@
     padding: 25px 0;
     gap: 15px;
 
-    /* HIDDEN BY DEFAULT */
     max-height: 0;
     opacity: 0;
     overflow: hidden;
     transition: 0.45s ease-in-out;
   }
 
-  /* SHOW ON TOGGLE */
   .nav-links.active {
     max-height: 500px;
     opacity: 1;
   }
 
-  /* MOBILE DROPDOWN */
+  /* Mobile dropdown */
   .dropdown-menu {
     position: relative;
-    box-shadow: none;
+    background: #0d47a1;
     width: 100%;
-    background: rgba(255,255,255,0.95);
     margin-top: 10px;
+    border-radius: 6px;
     display: none;
   }
 
-  .dropdown-btn {
-    width: 100%;
-    text-align: left;
-  }
-
-  /* Show dropdown when clicked */
   .dropdown:hover .dropdown-menu {
     display: block;
   }
 }
-@media (max-width: 768px) {
 
-  .dropdown-menu {
-    position: relative;
-    background: #0d47a1;  /* SAME BLUE */
-    width: 100%;
-    margin-top: 10px;
-    display: none;
-    border-radius: 6px;
-  }
-
-  .dropdown-menu li a {
-    color: white;
-  }
-
-  /* Open dropdown when tapped */
-  .dropdown:hover .dropdown-menu {
-    display: block;
-  }
+/* EDUCATION BUTTON STYLE */
+.dropdown-btn {
+  color: #ffd85a !important;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.45);
 }

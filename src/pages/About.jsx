@@ -1,120 +1,115 @@
 import React from "react";
 import "./About2.css";
 import buildingImg from "../assets/GalleryImg/4.jpg";
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
+
 
 const About2 = () => {
+
+  const location = useLocation();
+
+useEffect(() => {
+  if (location.hash) {
+    const id = location.hash.replace("#", "");
+    const section = document.getElementById(id);
+    if (section) {
+      setTimeout(() => {
+        section.scrollIntoView({ behavior: "smooth", block: "start" });
+      }, 200);
+    }
+  }
+}, [location]);
   return (
+
+    
+
     <div className="about2-page">
-      
+
       {/* ---------- ABOUT SCHOOL SECTION ---------- */}
       <section className="about2-section">
         <h2 className="about2-title">About Our School</h2>
         <div className="about2-divider"></div>
 
         <p className="about2-intro">
-          Chaitanya Gurukula School, Santebennur, is committed to nurturing young minds
-          with a perfect blend of traditional values and modern education. Our institution
-          stands as a symbol of academic excellence, discipline, and holistic development.
+          Chaitanya Gurukula School, Santebennur, is committed to nurturing
+          young minds with a blend of traditional values and modern education.
         </p>
       </section>
 
       {/* ---------- MAIN ABOUT CONTENT ---------- */}
       <section className="about2-content">
-        <img
-          src={buildingImg}
-          alt="School Building"
-          className="about2-image"
-        />
+        <img src={buildingImg} alt="School Building" className="about2-image" />
 
         <div className="about2-text">
           <p>
-            G.I.S (GURUKULA INTERNATIONAL SCHOOL) was established in 1980. It is one of
-            the premier institutions in Karnataka, serving the cause of education from
-            Nursery to Tenth Standard in both English and Kannada medium at 9th Cross,
-            Magadi Road, Bangalore city. The school has consistently achieved 100% SSLC
-            Board Examination results due to the commitment of its teaching staff.
+            G.I.S (GURUKULA INTERNATIONAL SCHOOL) was established in 1980...
           </p>
 
           <p>
-            The founders and successive leaders were distinguished educationists and
-            philanthropists who laid a strong foundation and nurtured its growth over
-            decades. Their dedication, determination, and values have shaped GIS into a
-            respected institution with more than 2000 students.
+            The founders and successive leaders were distinguished educationists...
           </p>
 
           <p>
-            For more than four decades, GIS remains devoted to its mission of providing
-            quality education, instilling discipline, and fostering holistic development
-            among students.
+            For more than four decades, GIS remains devoted to its mission...
           </p>
         </div>
       </section>
 
-      {/* ---------- GIS VALUES SECTION ---------- */}
+      {/* ---------- CGS VALUES SECTION ---------- */}
       <section className="about2-values">
         <h2 className="about2-title">CGS Values</h2>
         <div className="about2-divider"></div>
 
-          <div className="values-container">
-          <img
-            src={buildingImg}
-            alt="GIS Values"
-            className="about2-image"
-          />
+        <div className="values-container">
+          <img src={buildingImg} alt="GIS Values" className="about2-image" />
 
           <ul className="values-list">
-            <li><strong>Discipline:</strong> Encouraging responsible behavior and self-control.</li>
-            <li><strong>Integrity:</strong> Building honesty, sincerity, and strong moral character.</li>
-            <li><strong>Respect:</strong> Treating everyone with dignity and kindness.</li>
-            <li><strong>Excellence:</strong> Highest standards in academics & life.</li>
-            <li><strong>Holistic Growth:</strong> Mental, emotional & physical development.</li>
+            <li><strong>Discipline:</strong> Responsible behaviour.</li>
+            <li><strong>Integrity:</strong> Honesty & moral character.</li>
+            <li><strong>Respect:</strong> Dignity for everyone.</li>
+            <li><strong>Excellence:</strong> High academic standards.</li>
+            <li><strong>Holistic Growth:</strong> Mental & physical development.</li>
             <li><strong>Traditional Values:</strong> Culture + modern learning.</li>
           </ul>
         </div>
-          {/* mobile-only merged image shown below CGS Values on small screens */}
-          <img src={buildingImg} alt="Management" className="merged-mobile-image" />
+
+        <img src={buildingImg} alt="Management" className="merged-mobile-image" />
       </section>
 
-      {/* ---------- MERGED MANAGEMENT + PRINCIPAL DESK SECTION ---------- */}
+      {/* ---------- MANAGEMENT & PRINCIPAL SECTION ---------- */}
       <section className="about2-management-merged">
         <h2 className="about2-title">Management & Principal’s Message</h2>
         <div className="about2-divider"></div>
 
         <div className="merged-container">
-            <img src={buildingImg} alt="Management" className="merged-desktop-image about2-image" />
+          <img src={buildingImg} alt="Management" className="merged-desktop-image about2-image" />
 
-            <div className="merged-text">
-            {/* mobile-only image: re-add image above content on small screens */}
+          <div className="merged-text">
             <img src={buildingImg} alt="Management" className="merged-mobile-image" />
+
             <h3 className="management-subtitle">Chairman & Managing Director</h3>
             <p className="management-name">Mr. Nanjundaiah. S</p>
 
             <p className="merged-paragraph">
-              Completed MA. B.Ed., from Mysore University in 1979. Joined Bapuji Independence 
-              P.U. College, Magadi Road, Bangalore in 1980 as a Lecturer and later served 
-              as Principal until 2006.
+              Completed MA. B.Ed., from Mysore University in 1979...
             </p>
 
             <h3 className="management-subtitle">From the Principal’s Desk</h3>
 
             <p className="merged-paragraph">
-              Education of the new millennium needs to be technologically innovative and 
-              creatively challenging. Students must be prepared for the challenges of 
-              tomorrow while appreciating and respecting our rich cultural heritage.
+              Education of the new millennium needs to be innovative...
             </p>
 
             <p className="merged-paragraph">
-              Our mission is to impart quality education and create responsible, capable 
-              individuals who contribute positively to the nation.
+              Our mission is to impart quality education...
             </p>
 
             <p className="merged-paragraph">
-              We welcome you into our institution and congratulate you for choosing the 
-              right environment that nurtures learning and growth — Karnataka Education 
-              Society of Gurukula International School.
+              We welcome you into our institution...
             </p>
 
-            {/* Condensed CGS Values for mobile view (visible only on small screens) */}
+            {/* Mobile-only CGS Values */}
             <div className="cgsv-values">
               <h2 className="about2-title">CGS Values</h2>
               <img src={buildingImg} alt="Management" className="merged-mobile-image" />
@@ -130,6 +125,61 @@ const About2 = () => {
           </div>
         </div>
       </section>
+
+      {/* ---------- EXTRA SECTIONS ---------- */}
+
+      {/* ADMISSION SECTION */}
+      <section id="admission" className="extra-section">
+        <h2 className="about2-title">Admissions Open 2026–27</h2>
+        <div className="about2-divider"></div>
+
+        <div className="extra-flex">
+          <img src={buildingImg} alt="Admission" className="extra-image" />
+          <p className="extra-text">
+            Admissions are open for <strong>2026–27</strong>. Seats are limited!
+          </p>
+        </div>
+      </section>
+
+      {/* SCHOOL BUS */}
+      <section id="bus" className="extra-section">
+        <h2 className="about2-title">School Bus Facility</h2>
+        <div className="about2-divider"></div>
+
+        <div className="extra-flex">
+          <img src={buildingImg} alt="School Bus" className="extra-image" />
+          <p className="extra-text">
+            Safe transportation with trained drivers, GPS, and safety rules.
+          </p>
+        </div>
+      </section>
+
+      {/* LAB SECTION */}
+      <section id="lab" className="extra-section">
+        <h2 className="about2-title">New Computer & Science Lab</h2>
+        <div className="about2-divider"></div>
+
+        <div className="extra-flex">
+          <img src={buildingImg} alt="Lab" className="extra-image" />
+          <p className="extra-text">
+            Modern labs with latest equipment for hands-on learning.
+          </p>
+        </div>
+      </section>
+
+      {/* SCIENCE FAIR */}
+      <section id="science-fair" className="extra-section">
+        <h2 className="about2-title">Annual Science & Art Fair</h2>
+        <div className="about2-divider"></div>
+
+        <div className="extra-flex">
+          <img src={buildingImg} alt="Science Fair" className="extra-image" />
+          <p className="extra-text">
+            Students showcase creativity, innovation & scientific thinking.
+          </p>
+        </div>
+      </section>
+
     </div>
   );
 };
