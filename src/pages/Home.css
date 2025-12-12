@@ -37,15 +37,18 @@
 .tagline {
   font-size: 1.05rem;
   margin: 8px 0 12px;
-  color: rgba(255,255,255,0.95);
+  color: rgba(7, 7, 7, 0.95);
 }
 
-.description {
+.description ,
+.description *{
   max-width: 820px;
   margin: 0 auto;
-  color: rgba(255,255,255,0.9);
+  color: rgba(12, 12, 12, 0.9)!important;
 }
-
+.ddd,.ddd *{
+  color: rgba(12, 12, 12, 0.9)!important;
+}
 /* CONTENT SECTION (courses + image) */
 .content-section {
   display: flex;
@@ -152,7 +155,7 @@
   padding: 10px 12px;
   border-radius: 8px;
 }
-.testimonials-grid{ display:flex; gap:18px; flex-wrap:wrap }
+.testimonials-grid,.testimonials-grid *{ display:flex; gap:18px; flex-wrap:wrap;color: black !important; }
 .testimonial-card{ background:rgba(255,255,255,0.02); padding:12px; border-radius:10px; display:flex; gap:12px; align-items:flex-start; flex:1 1 30%; min-width:220px; box-shadow:0 8px 22px rgba(0,0,0,0.35) }
 .avatar{ width:64px; height:64px; border-radius:50%; overflow:hidden; flex:0 0 64px; display:flex; align-items:center; justify-content:center; background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.04) }
 .avatar img{ width:100%; height:100%; object-fit:cover }
@@ -162,8 +165,8 @@
 
 /* OUR VALUES */
 .values-section{ margin-top:30px; padding:18px; border-radius:12px; background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.00)); }
-.values-grid{ display:flex; gap:18px; flex-wrap:wrap; justify-content:space-between; margin-top:12px }
-.value-card{ flex:1 1 30%; min-width:220px; background:rgba(255,255,255,0.02); padding:18px; border-radius:12px; box-shadow:0 12px 30px rgba(0,0,0,0.35); text-align:center }
+.values-grid{ display:flex; gap:18px; flex-wrap:wrap; justify-content:space-between; margin-top:12px; }
+.value-card,.value-card *{ flex:1 1 30%; min-width:220px; background:rgba(255,255,255,0.02); padding:18px; border-radius:12px; box-shadow:0 12px 30px rgba(0,0,0,0.35); text-align:center;color: black !important; }
 .value-icon{ width:72px; height:72px; margin:0 auto 12px; display:flex; align-items:center; justify-content:center; font-size:32px; background:linear-gradient(135deg, rgba(144,238,144,0.12), rgba(255,216,90,0.06)); border-radius:50%; }
 .value-card h3{ margin:6px 0; color:#ffd85a }
 .value-card p{ color:rgba(255,255,255,0.9); line-height:1.45 }
@@ -175,7 +178,7 @@
 
 /* EVENTS */
 .events-section{ margin-top:30px; padding:18px; border-radius:12px }
-.events-grid{ display:flex; gap:18px; flex-wrap:wrap; margin-top:12px }
+.events-grid ,.events-grid * { display:flex; gap:18px; flex-wrap:wrap; margin-top:12px ; color: black!important; }
 .event-card{ flex:1 1 30%; min-width:240px; background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); padding:16px; border-radius:12px; box-shadow:0 14px 36px rgba(0,0,0,0.36); display:flex; flex-direction:column; gap:10px }
 .event-date{ font-size:0.9rem; color:#90ee90; font-weight:700 }
 .event-card h3{ margin:0; color:#ffd85a }
@@ -247,8 +250,9 @@ btn {
 }
 
 .btn.primary:hover {
-  background-color: #ffd85a;
-  color: #2b2c6f;
+  background-color: #ffd85a !important;
+  color: #2b2c6f !important
+  ;
   transform: translateY(-3px);
   box-shadow: 0 10px 26px rgba(0,0,0,0.45);
 }
@@ -256,14 +260,14 @@ btn {
 /* OUTLINE BUTTON (used in events) */
 .btn.outline {
   border: 2px solid #2b2c6f;
-  color: #2b2c6f;
+  color: #2b2c6f !important;
   background: transparent;
   box-shadow: 0 4px 16px rgba(0,0,0,0.25);
 }
 
 .btn.outline:hover {
   background-color: #2b2c6f;
-  color: #ffd85a;
+  color: #ffd85a !important;
   transform: translateY(-3px);
   box-shadow: 0 10px 26px rgba(0,0,0,0.45);
 }
@@ -275,7 +279,7 @@ btn {
 /* container: keep it above slider (z-index) and full width */
 .alert-bar {
   width: 100%;
-  background: #f5821f;
+  background: #1A3C8E;
   padding: 10px 0;
   margin: 0 0 20px 0;
   border-bottom: 3px solid #ffd85a;
@@ -367,7 +371,7 @@ btn {
 }
 
 .video-container {
-  max-width: 900px;
+  max-width: 100%;
   margin: 20px auto;
   border-radius: 12px;
   overflow: hidden;

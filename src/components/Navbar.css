@@ -1,7 +1,7 @@
 /* ================= NAVBAR MAIN ================= */
 .navbar {
   width: 100%;
-  background: #f5821f;
+  background: #1A3C8E;
   padding: 12px 30px;
   display: flex;
   justify-content: space-between;
@@ -30,14 +30,14 @@
 .nav-title h2 {
   font-size: 18px;
   margin: 0;
-  color: #fff;
+  color: #FFD85A;
   font-weight: bold;
 }
 
 .nav-title p {
   margin: 0;
   font-size: 13px;
-  color: #fff;
+  color: #FFD85A;
   opacity: .9;
 }
 
@@ -54,7 +54,7 @@
   font-size: 17px;
   font-weight: 600;
   text-decoration: none;
-  color: white;
+  color: #FFD85A;
   cursor: pointer;
   padding: 8px 14px;
   border-radius: 6px;
@@ -64,15 +64,17 @@
 /* HOVER EFFECT */
 .nav-links li a:hover,
 .dropdown-btn:hover {
-  background: #0d47a1;
+  background:rgba(0,0,0,0.25)
+
+✔ Very professional;
   color: white;
   transform: translateY(-2px);
 }
 
 /* ACTIVE PAGE STYLE (STAYS BLUE) */
 .nav-links li a.active {
-  background: #0d47a1 !important;
-  color: black !important;   /* YOU REQUESTED THIS */
+  background: #FFFFFF !important;
+  color: rgb(15, 15, 15) !important;   /* YOU REQUESTED THIS */
   box-shadow: 0 3px 8px rgba(0,0,0,0.35);
   transform: none;
 }

@@ -64,8 +64,8 @@ const Home = () => {
           <div className="text-block">
             <h2 className="section-title">Our Programs</h2>
             <p>We offer a wide range of programs focused on holistic development:</p>
-            <ul>
-              <li>Nursery: Montessori-based early years (PN, LKG, UKG)</li>
+            <ul className="ddd">
+              <li >Nursery: Montessori-based early years (PN, LKG, UKG)</li>
               <li>Primary: NCERT-aligned curriculum for grades 1–5</li>
               <li>Secondary: CBSE curriculum for grades 6–10</li>
               <li>Kannada & English medium options across grades</li>

@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import "./Navbar.css";
 import logo from "../assets/logo.jpg";
 
+
 const Navbar = () => {
   const [open, setOpen] = useState(false);
 

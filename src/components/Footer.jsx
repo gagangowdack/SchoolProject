@@ -9,8 +9,11 @@ import {
   FaYoutube,
   FaTwitter 
 } from "react-icons/fa";
+import { useTranslation } from 'react-i18next'; 
 
 const Footer = () => {
+  const { t } = useTranslation();
+  
   return (
     <footer className="school-footer">
       

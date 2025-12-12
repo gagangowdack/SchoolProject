@@ -17,12 +17,24 @@ const Gallery = () => {
   return (
     <div className="gallery-page">
       <h2>Our Gallery</h2>
+
       <div className="gallery-grid">
-        {images.map((src, index) => (
-          <div key={index} className="gallery-card">
-            <img src={src} alt={`Event ${index + 1}`} />
-          </div>
-        ))}
+        {images.map((src, index) => {
+          const randomDay = Math.floor(Math.random() * 28) + 1;
+          const randomMonth = Math.floor(Math.random() * 12) + 1;
+          const randomYear = 2020 + Math.floor(Math.random() * 5);
+
+          return (
+            <div key={index} className="gallery-card">
+              <img src={src} alt={`Event ${index + 1}`} />
+
+              {/* Caption below image */}
+              <p className="gallery-caption">
+                Annual Day Function – <span>{randomDay}/{randomMonth}/{randomYear}</span>
+              </p>
+            </div>
+          );
+        })}
       </div>
     </div>
   );
